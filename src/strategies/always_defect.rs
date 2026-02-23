@@ -9,5 +9,7 @@ impl AlwaysDefect {
 }
 
 impl Strategy for AlwaysDefect {
-
+    fn next_action(&mut self) -> Action {
+        Action::Defect
+    }
 }

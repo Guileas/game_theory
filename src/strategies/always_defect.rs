@@ -9,7 +9,10 @@ impl AlwaysDefect {
 }
 
 impl Strategy for AlwaysDefect {
-    fn next_action(&mut self) -> Action {
+    fn name(&self) -> &str {
+        "Always Defect"
+    }
+    fn next_move(&mut self, _opponent_history: &[Action]) -> Action {
         Action::Defect
     }
 }

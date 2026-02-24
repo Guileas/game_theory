@@ -1,4 +1,4 @@
-use crate::{Strategy, strategy::Action};
+use crate::{strategy::Action, Strategy};
 
 pub struct AlwaysCooperate;
 
@@ -9,5 +9,11 @@ impl AlwaysCooperate {
 }
 
 impl Strategy for AlwaysCooperate {
+    fn name(&self) -> &str {
+        "always_cooperate"
+    }
 
+    fn next_move(&mut self, _opponent_history: &[Action]) -> Action {
+        Action::Cooperate
+    }
 }
